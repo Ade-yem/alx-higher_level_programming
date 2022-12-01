@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-import add_0 as ad
-def main():
-    a = 1
-    b = 2
-    addition = ad.add(a, b)
-    print(f"{a} + {b} = {addition}")
-
-main()
+import add_0
+a = 1
+b = 2
+addition = add_0.add(a, b)
+print(f"{a} + {b} = {addition}")
