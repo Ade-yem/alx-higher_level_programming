@@ -27,3 +27,6 @@ def text_indentation(text):
                 c += 1
             continue
         c += 1
+
+
+text_indentation("A sneaky \n new line.")

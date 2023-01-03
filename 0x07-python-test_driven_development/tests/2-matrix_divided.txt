@@ -44,7 +44,7 @@ Passing a set as an argument:
     Traceback (most recent call last):
     	      	...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
- 
+
 
 Dividing a matrix which its rows don't have the same size:
 
