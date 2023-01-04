@@ -2,6 +2,7 @@
 
 """ Class Rectangle that defines a rectangle"""
 
+
 class Rectangle:
     """ Rectangle that defines a rectangle
 
@@ -28,6 +29,7 @@ class Rectangle:
     def width(self):
         """ gets/sets the value of width of the rectangle """
         return self.__width
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -38,8 +40,9 @@ class Rectangle:
 
     @property
     def height(self):
-        """ gets\sets the value of height of the rectangle """
+        """ gets/sets the value of height of the rectangle """
         return self.__height
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -83,10 +86,13 @@ class Rectangle:
             rect_1 (Rectangle): first rectangle to be compared
             rect_2 (Rectangle): second rectangle
         Raise:
-            TypeError exception with the message rect_1 must be an instance of Rectangle
-            TypeError exception with the message rect_2 must be an instance of Rectangle
+            TypeError exception with the message rect_1 must
+            be an instance of Rectangle
+            TypeError exception with the message rect_2 must
+            be an instance of Rectangle
         Return:
-            the biggest rectangle based on the area or rect_1 if both have the same area value
+            the biggest rectangle based on the area or rect_1 if
+            both have the same area value
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")

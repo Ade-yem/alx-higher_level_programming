@@ -2,6 +2,7 @@
 
 """ Class Rectangle that defines a rectangle"""
 
+
 class Rectangle:
     """ Rectangle that defines a rectangle
 
@@ -28,6 +29,7 @@ class Rectangle:
     def width(self):
         """ gets/sets the value of width of the rectangle """
         return self.__width
+
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
@@ -38,8 +40,9 @@ class Rectangle:
 
     @property
     def height(self):
-        """ gets\sets the value of height of the rectangle """
+        """ gets/sets the value of height of the rectangle """
         return self.__height
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -75,4 +78,3 @@ class Rectangle:
         """Detect instance deletion"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
