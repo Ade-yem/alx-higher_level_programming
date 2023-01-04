@@ -6,13 +6,14 @@
 
 """
 
+
 def add_integer(a, b=98):
     """  adds 2 integers
 
     Args:
         a (int or float) : first parameter
         b (int or float) : second parameter
-    
+
     Returns:
         n integer which is the addition of a and b
 
@@ -29,4 +30,3 @@ def add_integer(a, b=98):
     if isinstance(b, float):
         b = int(b)
     return a + b
-        

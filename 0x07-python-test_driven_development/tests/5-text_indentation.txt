@@ -1,4 +1,4 @@
-How to Use ``text_indentation`` module
+How to Use 5-text_indentation.py
 ================================
 
 This module defines a text-indentation function ``text_indentation(text)``.
@@ -12,7 +12,6 @@ and ``:``.
 ::
 
     >>> text_indentation = __import__('5-text_indentation').text_indentation
-
     >>> text_indentation("Hello?")
     Hello?
     <BLANKLINE>
@@ -29,7 +28,7 @@ No spaces are printed at the beginning of a line.
 
     >>> text_indentation("          ")
 
-No spaces are printed at the end of each printed line.
+Similarly, no spaces are printed at the end of each printed line.
 
 ::
 
@@ -75,7 +74,7 @@ New lines within a string are printed as normal.
 
 ::
     >>> text_indentation("A sneaky \n new line.")
-    A sneaky
+    A sneaky 
     new line.
     <BLANKLINE>
 
@@ -109,7 +108,7 @@ A combo example:
     <BLANKLINE>
     Teneo, inquit, finem illi videri nihil dolere.
     <BLANKLINE>
-    Transfer idem ad modestiam vel temperantiam,
+    Transfer idem ad modestiam vel temperantiam, 
     quae est moderatio cupiditatum rationi oboediens.
     <BLANKLINE>
     Si id dicis, vicimus.
