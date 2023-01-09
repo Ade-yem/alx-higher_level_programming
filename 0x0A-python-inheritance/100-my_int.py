@@ -5,5 +5,12 @@
 
 class MyInt(int):
     """class MyInt that inherits from int"""
-    i = self.copy
-    return True if i != 3 else False
+    def __eq__(self, value):
+        """Override == opeartor with != behavior."""
+        #return int.__ne__(self, value)
+        return self.real != value
+
+    def __ne__(self, value):
+        """Override != operator with == behavior."""
+        #return int.__eq__(self, value)
+        return self.real == value
