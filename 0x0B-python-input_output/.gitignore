@@ -1,0 +1,10 @@
+# Emacs extra files
+*~
+*#
+
+# Main files
+*main.py
+
+# Test files
+*.txt
+*.json
