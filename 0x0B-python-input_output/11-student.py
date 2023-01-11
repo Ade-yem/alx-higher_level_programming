@@ -25,3 +25,8 @@ class Student:
                     return obj
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return obj
+
+    def reload_from_json(self, json):
+        """ Replaces all attributes of the Student instance """
+        for atr in json:
+            self.__dict__[atr] = json[atr]
