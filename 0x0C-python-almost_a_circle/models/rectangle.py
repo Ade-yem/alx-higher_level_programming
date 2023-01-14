@@ -73,25 +73,42 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+    def area(self):
+        """ defines the area value of the Rectangle instance.
+        Return:
+           the area value of the Rectangle instance.
+        """
+        return self.height * self.width
 
-try:
-    Rectangle(10, "2")
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    def display(self):
+        """ prints in stdout the Rectangle instance with the character #
+        by taking care of x and y"""
+        if self.y > 0:
+            for k in range(self.y):
+                print()
 
-try:
-    r = Rectangle(10, 2)
-    r.width = -10
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+        for i in range(0, self.height):
+            for a in range(self.x):
+                print(" ", end="")
+            for j in range(0, self.width):
+                print("#", end="")
+            print()
 
-try:
-    r = Rectangle(10, 2)
-    r.x = {}
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    def __str__(self):
+        """ overriding the __str__ method
+        Return:
+            [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        x = f"[Rectangle] ({self.id}) {self.x}/{self.y} "
+        y = f"- {self.width}/{self.height}"
+        return x + y
 
-try:
-    Rectangle(10, 2, 3, -1)
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        if args and len(args) != 0:
+            attrs = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
