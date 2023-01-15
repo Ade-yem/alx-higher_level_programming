@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """Module for the class Rectangle that defines a rectangle"""
-Base = __import__("base").Base
+from models.base import Base
 
 
 class Rectangle(Base):
