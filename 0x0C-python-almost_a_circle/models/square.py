@@ -18,24 +18,37 @@ class Square(Rectangle):
 
     def __str__(self):
         """overloading __str__ method of the rectangle"""
-        return f"[Square] ({id}) {x}/{y} - {size}"
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
-s1 = Square(5)
-print(s1)
-print(s1.area())
-s1.display()
+    @property
+    def size(self):
+        """get/set size attribute"""
+        return self.width
 
-print("---")
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
 
-s2 = Square(2, 2)
-print(s2)
-print(s2.area())
-s2.display()
+    def update(self, *args, **kwargs):
+        """assign attributes"""
+        if args and len(args) != 0:
+            attrs = ["id", "size", "x", "y"]
+            for i in range(len(args)):
+                if attrs[i] == "size":
+                    setattr(self, "width", args[i])
+                    setattr(self, "height", args[i])
+                else:
+                    setattr(self, attrs[i], args[i])
+        else:
+            for k, v in kwargs.items():
+                if k == 'size':
+                    setattr(self, "width", v)
+                    setattr(self, "height", v)
+                else:
+                    setattr(self, k, v)
 
-print("---")
-            
-s3 = Square(3, 1, 3)
-print(s3)
-print(s3.area())
-s3.display()
-                                                    
+    def to_dictionary(self):
+        """that returns the dictionary representation of a Rectangle"""
+        attrs = ["id", "size", "x", "y"]
+        return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
