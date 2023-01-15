@@ -24,7 +24,7 @@ class Base:
         """returns the JSON string representation of list_dictionaries"""
         if type(list_dictionaries) == list:
             if list_dictionaries is None or len(list_dictionaries) == 0:
-                return []
+                return "[]"
             else:
                 return json.dumps(list_dictionaries)
 
@@ -37,7 +37,7 @@ class Base:
         filename = f"{cls.__name__}.json"
         with open(filename, "w", encoding="utf-8") as f:
             if list_objs is None or list_objs == []:
-                f.write([])
+                f.write("[]")
             else:
                 lists = [i.to_dictionary() for i in list_objs]
                 f.write(Base.to_json_string(lists))
@@ -90,7 +90,7 @@ class Base:
                 writer = csv.writer(f)
                 writer.writerows([])
             else:
-                if cls.__name__ is "Rectangle":
+                if cls.__name__ == "Rectangle":
                     attrs = ["id", "width", "height", "x", "y"]
                 else:
                     attrs = ["id", "size", "x", "y"]

@@ -3,6 +3,10 @@
 """Module for unit testing for the Base class"""
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+from io import StringIO
+from unittest.mock import patch
 
 
 class TestBaseMethods(unittest.TestCase):
@@ -52,7 +56,7 @@ class TestBaseMethods(unittest.TestCase):
         new = Base()
         with self.assertRaises(AttributeError):
             new.__nb_objects
-            
+
     def test_save_to_file_1(self):
         """ Test JSON file """
         Square.save_to_file(None)
@@ -64,7 +68,7 @@ class TestBaseMethods(unittest.TestCase):
 
         try:
             os.remove("Square.json")
-        except:
+        except Exception:
             pass
 
         Square.save_to_file([])
@@ -81,7 +85,7 @@ class TestBaseMethods(unittest.TestCase):
                 self.assertEqual(str_out.getvalue(), res)
         try:
             os.remove("Rectangle.json")
-        except:
+        except Exception:
             pass
 
         Rectangle.save_to_file([])

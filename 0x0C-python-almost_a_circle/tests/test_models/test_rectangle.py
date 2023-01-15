@@ -88,7 +88,8 @@ class TestRectangleMethods(unittest.TestCase):
     def test__str__(self):
         """ Test __str__ return value """
         r1 = Rectangle(3, 3)
-        res = "[Rectangle] (1) 0/0 - 3/3"
+        r2 = Rectangle(2, 3)
+        res = f"[Rectangle] ({r2.id - 1}) 0/0 - 3/3"
         self.assertEqual(r1.__str__(), res)
 
     def test_update(self):
@@ -147,12 +148,14 @@ class TestRectangleMethods(unittest.TestCase):
     def test_to_dictionary_2(self):
         """ Test dictionary returned """
         r1 = Rectangle(2, 2, 2, 2)
-        res = "[Rectangle] (1) 2/2 - 2/2\n"
+        r2 = Rectangle(3, 4, 7)
+        res = f"[Rectangle] ({r2.id - 1}) 2/2 - 2/2\n"
         with patch('sys.stdout', new=StringIO()) as str_out:
             print(r1)
             self.assertEqual(str_out.getvalue(), res)
 
         r2 = Rectangle(5, 7)
+        r2.id = 2
         res = "[Rectangle] (2) 0/0 - 5/7\n"
         with patch('sys.stdout', new=StringIO()) as str_out:
             print(r2)
