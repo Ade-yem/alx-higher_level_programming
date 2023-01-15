@@ -117,5 +117,3 @@ class Rectangle(Base):
         """that returns the dictionary representation of a Rectangle"""
         attrs = ["id", "width", "height", "x", "y"]
         return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
-
-    
