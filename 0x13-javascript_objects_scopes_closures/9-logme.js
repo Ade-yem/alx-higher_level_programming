@@ -4,4 +4,3 @@ exports.logMe = function (item) {
   console.log(`${nb}: ${item}`);
   nb++;
 };
-
