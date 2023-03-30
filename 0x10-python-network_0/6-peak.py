@@ -1,5 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ `6-peak.py` finds a peak in a list of unsorted integers"""
+
 
 def find_peak(list_of_integers):
     """Return a peak in a list of unsorted integers."""
