@@ -10,4 +10,4 @@ read readme
 echo "$readme" >> README.md
 echo "created readme"
 echo "folder created and initialized"
-cd "$folder"
+echo "done and dusted..."
